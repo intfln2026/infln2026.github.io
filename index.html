@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>International Frontier Legal Network</title>
+
+<!-- Google 组织结构化数据 (JSON-LD) 用于搜索结果与知识图谱 Logo 展示 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "International Frontier Legal Network",
+  "url": "https://www.iflegal.org",
+  "logo": "https://www.iflegal.org/Code_Generated_Image.png",
+  "sameAs": [
+    "https://www.linkedin.com/company/international-frontier-legal-network"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,560;0,9..144,650;1,9..144,440&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#1B2A3D;
+  --ink-soft:#2B3F55;
+  --parchment:#EDE6D6;
+  --parchment-2:#E4DBC6;
+  --paper:#FAF8F3;
+  --gold:#A9822C;
+  --gold-soft:#C9A855;
+  --seal:#7E2A1A;
+  --seal-soft:#9C4A34;
+  --sage:#3F5D54;
+  --line:rgba(27,42,61,0.16);
+  --line-on-ink:rgba(237,230,214,0.22);
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+
+body{
+  background:var(--parchment);
+  color:var(--ink);
+  font-family:'IBM Plex Sans', sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+}
+
+a{color:inherit;}
+.wrap{ max-width:1100px; margin:0 auto; padding:0 32px; }
+
+body::before{
+  content:"";
+  position:fixed; inset:0; pointer-events:none; z-index:0; opacity:0.5;
+  background-image:radial-gradient(rgba(27,42,61,0.035) 1px, transparent 1px);
+  background-size:3px 3px;
+}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:60;
+  background:rgba(237,230,214,0.9);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.site-header .wrap{ display:flex; align-items:center; justify-content:space-between; height:110px; }
+.brand{ display:flex; align-items:center; text-decoration:none; }
+/* 左边 LOGO 在上一版 70% 的基础（约 145px）上再缩 10%：145px * 0.9 = 约 130px，引用 Code_Generated_Image.png */
+.brand-img{ height:130px; width:auto; display:block; object-fit:contain; }
+
+/* 右边 TAB：微调行高与间距，保持整体协调 */
+.site-nav{ 
+  display:flex; 
+  gap:28px; 
+  font-family:'IBM Plex Mono', monospace; 
+  font-size:14px; 
+  font-weight:600;
+  letter-spacing:0.04em; 
+  text-transform:uppercase; 
+  margin-left:auto;
+}
+.site-nav a{ text-decoration:none; color:var(--ink-soft); border-bottom:2px solid transparent; padding-bottom:3px; transition:border-color .25s ease, color .25s ease; }
+.site-nav a:hover{ color:var(--seal); border-color:var(--seal); }
+
+.nav-toggle{ display:none; background:none; border:1px solid var(--ink); width:40px; height:40px; border-radius:2px; cursor:pointer; align-items:center; justify-content:center; }
+.nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{ content:""; display:block; width:18px; height:1.5px; background:var(--ink); position:relative; }
+.nav-toggle span::before{ position:absolute; top:-6px; }
+.nav-toggle span::after{ position:absolute; top:6px; }
+
+@media (max-width:760px){
+  .site-header .wrap{ height:85px; }
+  .site-nav{ position:fixed; top:85px; left:0; right:0; flex-direction:column; gap:0; background:var(--paper); border-bottom:1px solid var(--line); max-height:0; overflow:hidden; transition:max-height .3s ease; margin-left:0; font-size:15px; }
+  .site-nav.open{ max-height:480px; }
+  .site-nav a{ padding:16px 32px; border-bottom:1px solid var(--line); width:100%; }
+  .nav-toggle{ display:flex; }
+  .brand-img{ height:85px; }
+}
+
+/* Hero Carousel */
+.hero-slider{
+  position:relative;
+  background:var(--ink);
+  color:var(--paper);
+  overflow:hidden;
+}
+
+.meridian-lines{ position:absolute; inset:0; opacity:0.18; pointer-events:none; animation:driftLines 60s ease-in-out infinite alternate; }
+@keyframes driftLines{ from{ transform:translateX(0) scale(1); } to{ transform:translateX(-14px) scale(1.02); } }
+
+.hero-slides-container {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 300%;
+}
+
+.hero-slide {
+  width: 33.3333%;
+  flex-shrink: 0;
+  padding: 80px 0 70px;
+  position: relative;
+}
+
+.eyebrow{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-soft); display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+.eyebrow::before{ content:""; width:34px; height:1px; background:var(--gold-soft); }
+
+.hero-slide h1{ font-family:'Fraunces', serif; font-weight:440; font-size:clamp(32px,5vw,56px); line-height:1.1; max-width:18ch; letter-spacing:-0.01em; }
+.hero-slide h1 em{ font-style:italic; font-weight:440; color:var(--gold-soft); }
+
+.hero-sub{ margin-top:22px; max-width:54ch; font-size:16.5px; line-height:1.7; color:rgba(250,248,243,.78); }
+
+.hero-cta{ margin-top:36px; display:flex; gap:18px; flex-wrap:wrap; }
+
+.btn{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; text-decoration:none; padding:14px 24px; display:inline-flex; align-items:center; gap:8px; border-radius:1px; transition:transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease; }
+.btn-primary{ background:var(--gold-soft); color:var(--ink); border:1px solid var(--gold-soft); }
+.btn-primary:hover{ transform:translateY(-2px); background:var(--parchment); }
+.btn-ghost{ border:1px solid rgba(250,248,243,.4); color:var(--paper); }
+.btn-ghost:hover{ border-color:var(--paper); transform:translateY(-2px); }
+
+/* Card Grids for Slide 2 & 3 */
+.uncitral-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 40px;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .uncitral-content-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+.external-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(201, 168, 85, 0.4);
+  padding: 4px 12px;
+  border-radius: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--gold-soft);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.uncitral-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uncitral-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.whitepaper-card {
+  background: rgba(250, 248, 243, 0.05);
+  border: 1px solid rgba(201, 168, 85, 0.3);
+  padding: 32px;
+  border-radius: 4px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
+
+.whitepaper-card .wp-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--gold-soft);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.whitepaper-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  color: var(--paper);
+}
+
+.whitepaper-card p {
+  font-size: 14px;
+  color: rgba(250,248,243,0.7);
+  line-height: 1.6;
+}
+
+/* Controls */
+.carousel-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.carousel-controls .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+}
+.dot {
+  width: 28px;
+  height: 3px;
+  background: rgba(250, 248, 243, 0.25);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.dot.active {
+  background: var(--gold-soft);
+  width: 48px;
+}
+.carousel-arrows {
+  display: flex;
+  gap: 8px;
+}
+.arrow-btn {
+  background: rgba(250, 248, 243, 0.05);
+  border: 1px solid rgba(250, 248, 243, 0.2);
+  color: var(--paper);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 2px;
+}
+.arrow-btn:hover {
+  background: var(--gold-soft);
+  color: var(--ink);
+  border-color: var(--gold-soft);
+}
+
+/* Main Charter Articles */
+.charter{ padding:0; }
+.article{ border-bottom:1px solid var(--line); padding:76px 0; position:relative; }
+.article:nth-child(even){ background:var(--parchment-2); }
+
+.article-head{ display:grid; grid-template-columns:220px 1fr; gap:40px; margin-bottom:44px; }
+@media (max-width:760px){ .article-head{ grid-template-columns:1fr; gap:14px; } }
+
+.article-num{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); align-self:start; }
+.article-num span{ display:block; color:var(--ink-soft); font-size:11px; letter-spacing:.08em; margin-top:6px; text-transform:none; opacity:.7; }
+
+.article-title{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(26px,3.2vw,38px); line-height:1.15; max-width:17ch; }
+
+.article-body{ padding-left:260px; }
+@media (max-width:760px){ .article-body{ padding-left:0; } }
+
+.lede{ font-size:18px; line-height:1.75; max-width:62ch; color:var(--ink); margin-bottom:8px; }
+
+/* Pillars */
+.pillars{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:44px; }
+@media (max-width:760px){ .pillars{ grid-template-columns:1fr; } }
+.pillar{ background:var(--parchment); padding:32px 30px; transition:background .3s ease, transform .3s ease; }
+.article:nth-child(even) .pillar{ background:var(--parchment-2); }
+.pillar:hover{ background:var(--paper); transform:translateY(-3px); }
+.pillar-mark{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--gold); letter-spacing:.1em; margin-bottom:16px; display:block; }
+.pillar h3{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin-bottom:10px; line-height:1.3; }
+.pillar p{ font-size:14.5px; color:var(--ink-soft); line-height:1.65; }
+
+/* Ledger */
+.ledger{ margin-top:38px; border-top:1px solid var(--line); }
+.ledger-row{ display:grid; grid-template-columns:64px 1fr 220px 90px; gap:24px; padding:26px 0; border-bottom:1px solid var(--line); align-items:center; position:relative; }
+@media (max-width:640px){ .ledger-row{ grid-template-columns:32px 1fr; } .ledger-desc, .ledger-bar{ display:none; } }
+.ledger-index{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--gold); }
+.ledger-name{ font-family:'Fraunces', serif; font-weight:500; font-size:20px; }
+.ledger-desc{ font-size:13.5px; color:var(--ink-soft); line-height:1.6; }
+.ledger-bar{ height:3px; background:var(--line); position:relative; overflow:hidden; border-radius:2px; }
+.ledger-bar i{ position:absolute; left:0; top:0; bottom:0; width:0%; background:var(--seal-soft); transition:width 1.1s cubic-bezier(.22,.9,.28,1); }
+.ledger-row.in .ledger-bar i{ width:var(--fill); }
+
+/* Pullquote */
+.pullquote{
+  margin-top:56px; padding:44px 0 8px; border-top:1px solid var(--line);
+  display:grid; grid-template-columns:64px 1fr; gap:22px; align-items:start;
+}
+.pullquote svg{ width:44px; height:34px; flex-shrink:0; color:var(--gold); }
+.pullquote p{ font-family:'Fraunces', serif; font-style:italic; font-weight:440; font-size:clamp(20px,2.4vw,27px); line-height:1.5; color:var(--ink); }
+.pullquote cite{ display:block; margin-top:18px; font-family:'IBM Plex Mono', monospace; font-style:normal; font-size:12px; letter-spacing:.06em; color:var(--ink-soft); text-transform:uppercase; }
+
+/* Steps */
+.steps{ margin-top:44px; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+@media (max-width:900px){ .steps{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:520px){ .steps{ grid-template-columns:1fr; } }
+.step{ background:var(--paper); padding:28px 22px; position:relative; }
+.step .step-index{ font-family:'Fraunces', serif; font-style:italic; font-size:34px; color:var(--gold-soft); line-height:1; margin-bottom:14px; }
+.step h4{ font-family:'Fraunces', serif; font-size:16.5px; font-weight:500; margin-bottom:8px; }
+.step p{ font-size:13px; color:var(--ink-soft); line-height:1.6; }
+
+/* Tracks */
+.tracks{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:40px; }
+@media (max-width:760px){ .tracks{ grid-template-columns:1fr; } }
+.track{ background:var(--paper); padding:38px 34px; transition:background .3s ease; }
+.track:hover{ background:var(--parchment); }
+.track-tag{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--sage); }
+.track h3{ font-family:'Fraunces', serif; font-weight:500; font-size:23px; margin:12px 0 14px; }
+.track p{ font-size:14.5px; color:var(--ink-soft); line-height:1.7; margin-bottom:20px; }
+.track a{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:.05em; text-decoration:none; color:var(--seal); border-bottom:1px solid var(--seal); padding-bottom:2px; }
+.track a:hover{ color:var(--ink); border-color:var(--ink); }
+
+/* Closing (深色沉浸式背景) */
+.closing{ background:var(--ink); color:var(--paper); padding:80px 0 0; }
+.closing .article-title, .closing .article-num{ color:var(--paper); }
+.closing .article-num{ color:var(--gold-soft); }
+.closing .lede{ color:rgba(250,248,243,.8); }
+
+.contact-block{ display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:40px; padding-bottom:64px; }
+@media (max-width:760px){ .contact-block{ grid-template-columns:1fr; } }
+.contact-item{ border-top:1px solid var(--line-on-ink); padding-top:20px; }
+.contact-item .label{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-soft); margin-bottom:10px; display:block; }
+.contact-item a{ font-family:'Fraunces', serif; font-size:22px; text-decoration:none; color:var(--paper); border-bottom:1px solid transparent; transition:border-color .25s ease, color .25s ease; }
+.contact-item a:hover{ border-color:var(--gold-soft); color:var(--gold-soft); }
+
+/* 底部中间图形区域（保持原样不动） */
+.footer-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 0 40px;
+  border-top: 1px solid var(--line-on-ink);
+}
+
+.footer-logo-plate {
+  background: var(--paper);
+  border: 1px solid var(--gold-soft);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  padding: 24px 48px;
+  border-radius: 6px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo-img {
+  height: 180px; /* 保持原样不动 */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.signature-block{ border-top:1px solid var(--line-on-ink); padding:26px 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:.04em; color:rgba(250,248,243,.6); }
+
+/* Reveal on scroll */
+.reveal{ opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#" class="brand">
+      <img src="Code_Generated_Image.png" alt="International Frontier Legal Network Logo" class="brand-img">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="#mission">Mission</a>
+      <a href="#areas">Focus Areas</a>
+      <a href="#approach">Approach</a>
+      <a href="#involved">Get Involved</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO CAROUSEL -->
+<section class="hero-slider" id="heroSlider">
+  <svg class="meridian-lines" viewBox="0 0 1080 560" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#EDE6D6" stroke-width="0.6" fill="none">
+      <ellipse cx="740" cy="260" rx="120" ry="260"/>
+      <ellipse cx="740" cy="260" rx="260" ry="260"/>
+      <ellipse cx="740" cy="260" rx="400" ry="260"/>
+      <line x1="480" y1="0" x2="480" y2="560"/>
+      <line x1="740" y1="0" x2="740" y2="560"/>
+      <line x1="1000" y1="0" x2="1000" y2="560"/>
+    </g>
+  </svg>
+
+  <div class="hero-slides-container" id="slidesContainer">
+    
+    <!-- SLIDE 1: MAIN HERO -->
+    <div class="hero-slide">
+      <div class="wrap">
+        <p class="eyebrow">A Nonprofit Legal Organization</p>
+        <h1>Where emerging law finds its <em>first practitioners.</em></h1>
+        <p class="hero-sub">International Frontier Legal Network trains the next generation of legal professionals in the fields reshaping cross-border practice &mdash; and puts that same expertise to work providing free legal aid to those who need it most.</p>
+        <div class="hero-cta">
+          <a href="#involved" class="btn btn-primary">Get Involved</a>
+          <a href="#mission" class="btn btn-ghost">Read Our Charter</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: UNCITRAL 60TH ANNIVERSARY -->
+    <div class="hero-slide">
+      <div class="wrap">
+        <div class="uncitral-content-grid">
+          <div>
+            <div class="external-badge">
+              <span>🌐 External News &bull; UN Bulletin</span>
+            </div>
+            <h1>Commemorating <em>60 Years</em> of UNCITRAL Law</h1>
+            <p class="hero-sub">1966–2026: UNCITRAL marks six decades of harmonizing global commerce, legal innovation, and international trade governance.</p>
+            <div class="hero-cta">
+              <a href="https://uncitral.un.org/en/events" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Visit Official UNCITRAL Portal ↗
+              </a>
+            </div>
+          </div>
+          <div class="uncitral-card">
+            <img src="uncitral-60-logo.webp" alt="UNCITRAL 60 Legal Emblem (1966-2026)" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: NEWS - Q4 STRATEGY WHITEPAPER -->
+    <div class="hero-slide">
+      <div class="wrap">
+        <div class="uncitral-content-grid">
+          <div>
+            <div class="external-badge">
+              <span>📢 News &bull; Announcement</span>
+            </div>
+            <h1>Upcoming Release: <em>Q4 Strategic Plan Whitepaper</em></h1>
+            <p class="hero-sub">Outlining our roadmap for expanding pro bono initiatives, frontier law research, and international fellowships for the fourth quarter.</p>
+            <div class="hero-cta">
+              <a href="#involved" class="btn btn-primary">Pre-Register for Release</a>
+            </div>
+          </div>
+          <div class="whitepaper-card">
+            <span class="wp-date">Publication Date: Sept 1, 2026</span>
+            <h3>Q4 Strategic Legal Plan &amp; Frontier Expansion Whitepaper</h3>
+            <p>An in-depth analysis on emerging cross-border governance and IFLEGAL's strategic operational goals for the upcoming fourth quarter.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 轮播控制 -->
+  <div class="carousel-controls">
+    <div class="wrap">
+      <div class="carousel-dots">
+        <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+        <button class="dot" data-index="1" aria-label="Slide 2"></button>
+        <button class="dot" data-index="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-arrows">
+        <button class="arrow-btn" id="prevSlide" aria-label="Previous Slide">&larr;</button>
+        <button class="arrow-btn" id="nextSlide" aria-label="Next Slide">&rarr;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="charter">
+
+  <!-- ARTICLE I -->
+  <section class="article reveal" id="mission">
+    <div class="wrap">
+      <div class="article-head">
+        <div class="article-num">Article I<span>Mission &amp; Purpose</span></div>
+        <h2 class="article-title">Three commitments, one charter.</h2>
+      </div>
+      <div class="article-body">
+        <p class="lede">We are organized exclusively for charitable and educational purposes &mdash; built to move as quickly as the fields we study, and to stay accountable to the people we serve.</p>
+        <div class="pillars">
+          <div class="pillar">
+            <span class="pillar-mark">&sect; 1</span>
+            <h3>Legal Exchange</h3>
+            <p>Convening research, dialogue, and cross-border exchange in international arbitration, energy and environmental law, trade and export control, and AI governance.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-mark">&sect; 2</span>
+            <h3>Professional Development</h3>
+            <p>Training and mentoring young legal professionals and scholars entering fields that most law schools have not yet caught up to.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-mark">&sect; 3</span>
+            <h3>Pro Bono Legal Aid</h3>
+            <p>Providing free legal aid services to low-income individuals &mdash; the same rigor, applied where it is needed most.</p>
+          </div>
+        </div>
+
+        <div class="pullquote">
+          <svg viewBox="0 0 44 34" fill="currentColor"><path d="M0 34V19.5C0 8.7 6.8 1.6 17 0l2 5.4C12.3 7 9 11 9 16h8v18H0zm24 0V19.5C24 8.7 30.8 1.6 41 0l2 5.4C36.3 7 33 11 33 16h8v18H24z"/></svg>
+          <div>
+            <p>Emerging law does not wait for legal education to catch up. Our work is to close that gap &mdash; in the classroom, in practice, and in the communities that need representation most.</p>
+            <cite>&mdash; Founding Charter, International Frontier Legal Network</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE II -->
+  <section class="article reveal" id="areas">
+    <div class="wrap">
+      <div class="article-head">
+        <div class="article-num">Article II<span>Fields of Practice</span></div>
+        <h2 class="article-title">Four frontiers, studied in the open.</h2>
+      </div>
+      <div class="article-body">
+        <p class="lede">The areas of law that will decide how the next decade of cross-border commerce, energy, and technology actually works &mdash; and where young practitioners have the least formal training.</p>
+        <div class="ledger">
+          <div class="ledger-row" style="--fill:88%">
+            <span class="ledger-index">01</span>
+            <span class="ledger-name">International Arbitration</span>
+            <span class="ledger-desc">Cross-border dispute resolution and the institutions that govern it.</span>
+            <span class="ledger-bar"><i></i></span>
+          </div>
+          <div class="ledger-row" style="--fill:74%">
+            <span class="ledger-index">02</span>
+            <span class="ledger-name">Energy &amp; Environmental Law</span>
+            <span class="ledger-desc">The legal architecture of the energy transition.</span>
+            <span class="ledger-bar"><i></i></span>
+          </div>
+          <div class="ledger-row" style="--fill:66%">
+            <span class="ledger-index">03</span>
+            <span class="ledger-name">Trade &amp; Export Control</span>
+            <span class="ledger-desc">Sanctions, export regimes, and the compliance frameworks around them.</span>
+            <span class="ledger-bar"><i></i></span>
+          </div>
+          <div class="ledger-row" style="--fill:80%">
+            <span class="ledger-index">04</span>
+            <span class="ledger-name">AI Governance</span>
+            <span class="ledger-desc">Emerging regulatory frameworks for artificial intelligence.</span>
+            <span class="ledger-bar"><i></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE III -->
+  <section class="article reveal" id="approach">
+    <div class="wrap">
+      <div class="article-head">
+        <div class="article-num">Article III<span>How We Work</span></div>
+        <h2 class="article-title">From first exchange to standing counsel.</h2>
+      </div>
+      <div class="article-body">
+        <p class="lede">A working method as deliberate as the law we study.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-index">i.</div>
+            <h4>Convene</h4>
+            <p>Bring together practitioners, scholars, and fellows around a defined frontier-law question.</p>
+          </div>
+          <div class="step">
+            <div class="step-index">ii.</div>
+            <h4>Train</h4>
+            <p>Mentor young legal professionals through structured fellowships and working groups.</p>
+          </div>
+          <div class="step">
+            <div class="step-index">iii.</div>
+            <h4>Publish</h4>
+            <p>Turn research and exchange into resources the field can actually use.</p>
+          </div>
+          <div class="step">
+            <div class="step-index">iv.</div>
+            <h4>Serve</h4>
+            <p>Apply that same expertise directly, through free legal aid to those who need it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE IV -->
+  <section class="article reveal" id="involved">
+    <div class="wrap">
+      <div class="article-head">
+        <div class="article-num">Article IV<span>Participation</span></div>
+        <h2 class="article-title">Two ways to join the work.</h2>
+      </div>
+      <div class="article-body">
+        <p class="lede">Whether you are early in your legal career or in a position to support ours, there is a defined place for you here.</p>
+        <div class="tracks">
+          <div class="track">
+            <span class="track-tag">For Legal Professionals</span>
+            <h3>Join as a Fellow</h3>
+            <p>Take part in our exchange programs, mentorship tracks, and working groups across arbitration, energy, trade, and AI governance.</p>
+            <a href="mailto:info@iflegal.org?subject=Fellowship%20Inquiry">Inquire about fellowships &rarr;</a>
+          </div>
+          <div class="track">
+            <span class="track-tag">For Partners &amp; Supporters</span>
+            <h3>Support the Work</h3>
+            <p>Partner with us on programming, pro bono capacity, or funding &mdash; and help extend legal aid to those who need it most.</p>
+            <a href="mailto:info@iflegal.org?subject=Partnership%20Inquiry">Discuss a partnership &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE V -->
+  <section class="article closing reveal" id="contact">
+    <div class="wrap">
+      <div class="article-head">
+        <div class="article-num">Article V<span>Correspondence</span></div>
+        <h2 class="article-title">Write to us.</h2>
+      </div>
+      <div class="article-body">
+        <p class="lede">We read every inquiry &mdash; from prospective fellows, partner organizations, and anyone in need of legal aid referral.</p>
+        <div class="contact-block">
+          <div class="contact-item">
+            <span class="label">Email</span>
+            <a href="mailto:info@iflegal.org">info@iflegal.org</a>
+          </div>
+          <div class="contact-item">
+            <span class="label">Web</span>
+            <a href="https://www.iflegal.org">www.iflegal.org</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 底部中间的图形区域（保持原样不动） -->
+      <div class="footer-logo-container">
+        <div class="footer-logo-plate">
+          <img src="Code_Generated_Image.png" alt="International Frontier Legal Network Logo" class="footer-logo-img">
+        </div>
+      </div>
+
+      <div class="signature-block">
+        <span>&copy; International Frontier Legal Network</span>
+        <span>IRC &sect; 501(c)(3) Application Pending</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Mobile Nav
+  const navToggle = document.getElementById('navToggle');
+  const siteNav = document.getElementById('siteNav');
+  navToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Carousel & Auto-Run Logic
+  const container = document.getElementById('slidesContainer');
+  const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.getElementById('prevSlide');
+  const nextBtn = document.getElementById('nextSlide');
+  let currentSlide = 0;
+  const totalSlides = 3;
+  let timer = null;
+
+  function goToSlide(index) {
+    currentSlide = (index + totalSlides) % totalSlides;
+    container.style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+
+  function startAutoRun() {
+    stopAutoRun();
+    timer = setInterval(() => {
+      goToSlide(currentSlide + 1);
+    }, 2500);
+  }
+
+  function stopAutoRun() {
+    if (timer) clearInterval(timer);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goToSlide(parseInt(dot.dataset.index));
+      startAutoRun();
+    });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    goToSlide(currentSlide - 1);
+    startAutoRun();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    goToSlide(currentSlide + 1);
+    startAutoRun();
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    startAutoRun();
+  });
+  startAutoRun();
+
+  // Scroll Reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Ledger animation
+  const ledgerRows = document.querySelectorAll('.ledger-row');
+  const barIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        barIO.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  ledgerRows.forEach(el => barIO.observe(el));
+</script>
+
+</body>
+</html>
